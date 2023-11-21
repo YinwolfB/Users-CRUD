@@ -18,6 +18,7 @@ console.log(users)
     <div>
       <h1>Users</h1>
     <FormUser
+      createUser={createUser}
     ></FormUser>
     </div>
   )

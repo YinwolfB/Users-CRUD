@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form"
 
-export const FormUser = () => {
+export const FormUser = ({createUser}) => {
 
 const {handleSubmit, register, reset } = useForm()
 const submit = data =>{
-
+    createUser( '/users' ,data)
+    reset({
+        email: '',
+        password:'',
+        first_name:'',
+        last_name:'',
+        birthday:''
+    })
 }
 
     return (

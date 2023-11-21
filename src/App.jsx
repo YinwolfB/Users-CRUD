@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import './App.css'
 import { useCrud } from './hooks/useCrud'
+import { FormUser } from './hooks/components/FormUser'
 
 function App() {
   
@@ -16,7 +17,8 @@ console.log(users)
   return (
     <div>
       <h1>Users</h1>
-
+    <FormUser
+    ></FormUser>
     </div>
   )
 }

@@ -4,13 +4,14 @@ import { useCrud } from './hooks/useCrud'
 
 function App() {
   
-  const url = 'https://user-crud.academlo.tech'
-const [ users, getUsers,createUser,delateUser, updateUser ] = useCrud()
+  const url = 'https://users-crud.academlo.tech'
+const [ users, getUsers,createUser,delateUser, updateUser ] = useCrud(url)
 
 useEffect(() => {
-  getUsers()
+  getUsers('/users')
 }, [])
 
+console.log(users)
 
   return (
     <div>

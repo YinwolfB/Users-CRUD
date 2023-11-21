@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-export const UserCard = ({ user, delateUser, setInfoUpdate }) => {
+export const UserCard = ({ user, delateUser, setInfoUpdate,setIsDisable }) => {
 
     const handleDelate = () => {
         delateUser('/users', user.id)
@@ -8,6 +8,7 @@ export const UserCard = ({ user, delateUser, setInfoUpdate }) => {
 
     const handelEdit = () => {
         setInfoUpdate(user)
+        setIsDisable(false)
     }
 
     return (

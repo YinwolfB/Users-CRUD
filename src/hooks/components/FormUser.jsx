@@ -1,19 +1,25 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 
-export const FormUser = ({createUser}) => {
+export const FormUser = ({ createUser, infoUpdate }) => {
 
-const {handleSubmit, register, reset } = useForm()
-const submit = data =>{
-    createUser( '/users' ,data)
-    reset({
-        email: '',
-        password:'',
-        first_name:'',
-        last_name:'',
-        birthday:''
-    })
-}
+    useEffect(() => {
+        reset(infoUpdate)
+    }, [infoUpdate])
+
+
+    const { handleSubmit, register, reset } = useForm()
+    const submit = data => {
+        createUser('/users', data)
+        reset({
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: '',
+            birthday: ''
+        })
+    }
 
     return (
         <div>

@@ -19,8 +19,7 @@ export const useCrud = (baseUrl) => {
         const url = `${baseUrl}${path}/`
         axios.post(url, data)
             .then(res => {
-                console.log(res.data)
-                setInfoApi(...infoApi, res.data)
+                setInfoApi(prevState => [...prevState, res.data])
             })
             .catch(err => console.log(err))
     }
@@ -42,7 +41,6 @@ export const useCrud = (baseUrl) => {
         const url = `${baseUrl}${path}/${id}/`
         axios.patch(url, data)
             .then(res => {
-                console.log(res.data)
                 setInfoApi(infoApi.map(e => e.id === id ? res.data : id))
             })
             .catch(err => console.log(err))

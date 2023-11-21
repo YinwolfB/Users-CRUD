@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { useCrud } from './hooks/useCrud'
-import { FormUser } from './hooks/components/FormUser'
-import { UserCard } from './hooks/components/UserCard'
+import { FormUser } from './components/FormUser'
+import { UserCard } from './components/UserCard'
 
 function App() {
 
@@ -23,16 +23,18 @@ function App() {
       <FormUser
         createUser={createUser}
         infoUpdate={infoUpdate}
-      ></FormUser>
+        updateUser={updateUser}
+        setInfoUpdate={setInfoUpdate}
+      />
       <div>
         {
-          users && users.map(user => (
+          users?.map(user => (
             <UserCard
-              key={user.id}
+              key={user.id} // Asegúrate de que user.id sea único para cada usuario
               user={user}
               delateUser={delateUser}
               setInfoUpdate={setInfoUpdate}
-            ></UserCard>
+            />
           ))
         }
       </div>

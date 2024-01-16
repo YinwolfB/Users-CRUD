@@ -19,7 +19,7 @@ export const FormUser = ({ createUser, infoUpdate, updateUser, setInfoUpdate, is
         if (infoUpdate) {
             //update
             updateUser('/users', infoUpdate.id, data)
-            setInfoUpdate()
+            setInfoUpdate(null)
         } else {
             //Create
             createUser('/users', data)

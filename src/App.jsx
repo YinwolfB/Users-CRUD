@@ -10,7 +10,7 @@ function App() {
   const [infoUpdate, setInfoUpdate] = useState()
   const [isDisable, setIsDisable] = useState(true)
 
-  const url = 'https://users-crud.academlo.tech'
+  const url = 'https://backend-userscrud-dev-gskr.1.us-1.fl0.io'
   const [users, getUsers, createUser, delateUser, updateUser] = useCrud(url)
 
   useEffect(() => {

@@ -38,16 +38,16 @@ export const useCrud = (baseUrl) => {
     //UPDATE -- actualiza un registro en la base de datos
 
     const updateApi = (path, id, data) => {
-        const url = `${baseUrl}${path}/${id}/`;
+        const url = `${baseUrl}${path}/${id}/`
         axios.patch(url, data)
-        .then(res => {
-            setInfoApi(prevState =>
-                prevState.map(e => (e.id === id ? res.data : e))
-            );
-        })
-        .catch(err => console.log(err));
-};
+            .then(res => {
+                setInfoApi(prevState =>
+                    prevState.map(e => (e.id === id ? res.data : e))
+                )
+            })
+            .catch(err => console.log(err));
+    }
 
     //
-    return [infoApi, getApi, postApi, delateApi, updateApi];
+    return [infoApi, getApi, postApi, delateApi, updateApi]
 }

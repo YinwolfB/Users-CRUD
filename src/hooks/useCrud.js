@@ -40,12 +40,12 @@ export const useCrud = (baseUrl) => {
     const updateApi = (path, id, data) => {
         const url = `${baseUrl}${path}/${id}/`
         axios.patch(url, data)
-            .then(res => {
-                setInfoApi(prevState =>
-                prevState.map(e => (e.id === id ? res.data : e))
-            )
+        .then(res => {
+            setInfoApi(prevState =>
+                prevState.map(e => (e.id === id ? { ...e, ...res.data } : e))
+            );
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 }
 
     //

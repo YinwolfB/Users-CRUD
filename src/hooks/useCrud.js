@@ -39,7 +39,7 @@ export const useCrud = (baseUrl) => {
 
     const updateApi = (path, id, data) => {
         const url = `${baseUrl}${path}/${id}/`
-        axios.patch(url, data)
+        axios.put(url, data)
             .then(res => {
                 setInfoApi(prevState =>
                     prevState.map(e => (e.id === id ? res.data : e))
